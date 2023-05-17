@@ -18,7 +18,7 @@ public class MainTest {
 
         @BeforeEach
         public void init() throws IOException  {
-            File file = new File("employees.csv");
+            File file = new File("src/main/employees.csv");
 
             FileWriter fileWriter = new FileWriter(file);
             fileWriter.append("Jan;Kowalski;123456789;Management;6000\n");
@@ -34,7 +34,7 @@ public class MainTest {
             Main.main(new String[]{});
 
             // then
-            File statsFile = new File("stats.txt");
+            File statsFile = new File("src/main/stats.txt");
             assertThat(statsFile).exists();
             List<String> allLines = Files.readAllLines(statsFile.toPath());
 
@@ -49,7 +49,7 @@ public class MainTest {
             Main.main(new String[]{});
 
             // then
-            File statsFile = new File("stats.txt");
+            File statsFile = new File("src/main/stats.txt");
             assertThat(statsFile).exists();
             String fileContent = Files.readString(statsFile.toPath());
 
@@ -62,7 +62,7 @@ public class MainTest {
             Main.main(new String[]{});
 
             // then
-            File statsFile = new File("stats.txt");
+            File statsFile = new File("src/main/stats.txt");
             assertThat(statsFile).exists();
             String fileContent = Files.readString(statsFile.toPath());
 
@@ -75,7 +75,7 @@ public class MainTest {
             Main.main(new String[]{});
 
             // then
-            File statsFile = new File("stats.txt");
+            File statsFile = new File("src/main/stats.txt");
             assertThat(statsFile).exists();
             String fileContent = Files.readString(statsFile.toPath());
 
@@ -88,7 +88,7 @@ public class MainTest {
             Main.main(new String[]{});
 
             // then
-            File statsFile = new File("stats.txt");
+            File statsFile = new File("src/main/stats.txt");
             assertThat(statsFile).exists();
             String fileContent = Files.readString(statsFile.toPath());
 
@@ -101,7 +101,7 @@ public class MainTest {
             Main.main(new String[]{});
 
             // then
-            File statsFile = new File("stats.txt");
+            File statsFile = new File("src/main/stats.txt");
             assertThat(statsFile).exists();
             String fileContent = Files.readString(statsFile.toPath());
 
@@ -114,7 +114,7 @@ public class MainTest {
             Main.main(new String[]{});
 
             // then
-            File statsFile = new File("stats.txt");
+            File statsFile = new File("src/main/stats.txt");
             assertThat(statsFile).exists();
             String fileContent = Files.readString(statsFile.toPath());
 
@@ -128,7 +128,7 @@ public class MainTest {
 
         @BeforeEach
         public void init() throws IOException  {
-            File file = new File("employees.csv");
+            File file = new File("src/main/employees.csv");
 
             FileWriter fileWriter = new FileWriter(file);
             fileWriter.append("Jan;Kowalski;123456789;IT;6000\n");
@@ -141,7 +141,7 @@ public class MainTest {
             Main.main(new String[]{});
 
             // then
-            File statsFile = new File("stats.txt");
+            File statsFile = new File("src/main/stats.txt");
             assertThat(statsFile).exists();
             List<String> allLines = Files.readAllLines(statsFile.toPath());
 
@@ -156,7 +156,7 @@ public class MainTest {
             Main.main(new String[]{});
 
             // then
-            File statsFile = new File("stats.txt");
+            File statsFile = new File("src/main/stats.txt");
             assertThat(statsFile).exists();
             String fileContent = Files.readString(statsFile.toPath());
 
@@ -169,7 +169,7 @@ public class MainTest {
             Main.main(new String[]{});
 
             // then
-            File statsFile = new File("stats.txt");
+            File statsFile = new File("src/main/stats.txt");
             assertThat(statsFile).exists();
             String fileContent = Files.readString(statsFile.toPath());
 
@@ -182,7 +182,7 @@ public class MainTest {
             Main.main(new String[]{});
 
             // then
-            File statsFile = new File("stats.txt");
+            File statsFile = new File("src/main/stats.txt");
             assertThat(statsFile).exists();
             String fileContent = Files.readString(statsFile.toPath());
 
