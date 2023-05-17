@@ -12,11 +12,10 @@ public class Main {
 
         if (file.exists()) {
             File stats = new File("src/main/stats.txt");
-
-            FileWriter fileWriter = new FileWriter(stats);
-            fileWriter.write(factory.printInfoAboutFactory(employees));
-
-            fileWriter.close();
+            try (FileWriter fileWriter = new FileWriter(stats)) {
+                fileWriter.write(factory.printInfoAboutFactory(employees));
+            }
         }
     }
 }
+

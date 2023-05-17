@@ -4,18 +4,15 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Factory {
-    private int averageSalary;
-    private int minSalary = 1000_000;
-    private int maxSalary = 1;
-    private int itWorker;
-    private int supportWorker;
-    private int managementWorker;
 
     public Employee[] employeesDataReader(File fileName) throws IOException {
-
-        int standardMaxAmountOfEmployees = 20;
-
-        Employee[] employees = new Employee[standardMaxAmountOfEmployees];
+        int lines = 0;
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
+            while (bufferedReader.readLine() != null) {
+                lines++;
+            }
+        }
+        Employee[] employees = new Employee[lines];
         String line;
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
@@ -40,6 +37,11 @@ public class Factory {
     public String printInfoAboutFactory(Employee[] employees) {
         int employeeCount = 0;
         int allEmployeesSalary = 0;
+        int minSalary = 1000_000;
+        int maxSalary = 1;
+        int itWorker = 0;
+        int supportWorker = 0;
+        int managementWorker = 0;
 
         for (Employee employee : employees) {
             if (employee != null) {
@@ -60,7 +62,7 @@ public class Factory {
                 }
             }
         }
-        averageSalary += allEmployeesSalary / employeeCount;
+        int averageSalary = allEmployeesSalary / employeeCount;
 
         return "Średnia wypłata: " + averageSalary
                 + "\nMinimalna wypłata: " + minSalary
